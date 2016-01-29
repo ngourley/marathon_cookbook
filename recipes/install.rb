@@ -38,6 +38,8 @@ execute 'marathon-extract' do
   only_if { ::Dir.glob("#{node['marathon']['home']}/*#{node['marathon']['version']}").empty? }
 end
 
+log node['marathon']['flags']
+
 template 'marathon-wrapper' do
   path     ::File.join(node['marathon']['home'], 'wrapper')
   owner    'root'
