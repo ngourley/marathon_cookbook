@@ -15,7 +15,7 @@ default['marathon']['home']               = '/opt/marathon'
 default['marathon']['jvm']['Xmx512m']     = true
 
 # Marathon command line flags
-default['marathon']['flags']['master']    = 'zk://localhost:2181/mesos'
+default['marathon']['flags']['master']    = 'zk://localhost:2181/mesos --event_subscriber http_callback'
 
 # Init system to use
 default['marathon']['init']               = case node['platform']
